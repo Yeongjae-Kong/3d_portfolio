@@ -44,33 +44,12 @@ export default function Kong() {
     , title: "23.12 ~ 24.01  KAIST MadCamp"}
   ]
 
-  const handleScroll = () => {
-    document.querySelectorAll('.fullcomponent').forEach((element) => {
-      // HTMLElement로 타입 단언
-      const el = element as HTMLElement;
-      const rect = el.getBoundingClientRect();
-      const height = window.innerHeight;
-  
-      // 중앙에서의 거리 계산
-      const distanceToCenter = Math.abs(height / 2 - (rect.top + rect.bottom) / 2);
-      
-      // 스케일 계산
-      const scale = Math.max(1 - distanceToCenter / height, 0.5);
-  
-      // 스케일 적용
-      el.style.transform = `scale(${scale})`;
-    });
-  };
-  
-  // 스크롤 이벤트에 핸들러 연결
-  window.addEventListener('scroll', handleScroll);
-
   return (
     <div className="app-container">
       <div className="ocean-animation">
         <Summer isDayTime={isDayTime} />
       </div>
-      <div className="scroll-container"> {/* 스크롤 가능한 컨테이너 */}
+      <div className="scroll-container">
           <div className="fullcomponent">
             <Canvas className="canvas" dpr={[1, 2]}>
               <Scene setBg={set} onShapeClick={() => setIsDayTime(!isDayTime)} />
@@ -90,13 +69,6 @@ export default function Kong() {
             </div>
             <Page3 images={images2} style={{ flex: 1 }} />
           </div>
-          {/* <div className="fullcomponent">
-            <Canvas className="canvas" dpr={[1, 2]}>
-              <Scene setBg={set} onShapeClick={() => setIsDayTime(!isDayTime)} />
-              <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-            </Canvas>
-            <Overlay3 fill={fill} />
-          </div> */}
       </div>
     </div>
   );

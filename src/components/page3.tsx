@@ -11,9 +11,27 @@ import getUuid from 'uuid-by-string'
 const GOLDENRATIO = 1.61803398875
 
 export const Page3 = ({ images }: any) => (
-  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} gl={{ alpha: true }}>
-    <group position={[0, -0.5, 0]}>
+  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} >
+    <group position={[0, -0.5, 0]} >
       <Frames images={images} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[50, 50]} />
+        <MeshReflectorMaterial
+          blur={[300, 100]}
+          resolution={2048}
+          mixBlur={1}
+          mixStrength={80}
+          roughness={1}
+          depthScale={1.2}
+          minDepthThreshold={0.4}
+          maxDepthThreshold={1.4}
+          color="#050505"
+          transparent
+          opacity={0}
+          metalness={0.5}
+          mirror={1}
+        />
+      </mesh>
     </group>
     {/* <OrbitControls
       enablePan={false}
@@ -91,7 +109,7 @@ function Frame({ url, text, title, c = new THREE.Color(), ...props }: any) {
     const zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2;
     image.current.material.zoom = zoom;
     easing.damp3(image.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
-    easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.2, dt)
+    easing.dampC(frame.current.material.color, hovered ? 'skyblue' : 'white', 0.2, dt)
   });
 
   return (

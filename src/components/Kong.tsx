@@ -8,6 +8,7 @@ import {Page2} from "./page2";
 import {Page3} from "./page3";
 import './styles.css';
 import { useState } from "react";
+import Skills from "./skills";
 
 
 export default function Kong() {
@@ -27,7 +28,7 @@ export default function Kong() {
     { position: [-2.8, 0, 2.75], rotation: [0, Math.PI / 3.5, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgniK%2FbtsDUdlZTpd%2FMqCYpnqkwPAvzd9DGCuKX0%2Fimg.png`, text: "The Anomaly Detection with Human Data (called ADHD) is an AI project that learns AI models with Movenet & LSTM to detect abnormal situations such as assault by extracting Humanpose from CCTV (such as webcam) in real time to solve the recent surge in unmanned store crimes."
     , title: "ADHD Project" },
     // Right
-    { position: [1.5, 0, 1.9], rotation: [0, -Math.PI / 7, 0], url: pexel(310452) },
+    { position: [1.5, 0, 1.9], rotation: [0, -Math.PI / 7, 0], url: pexel(310452) , title : "temp" },
     { position: [2.8, 0, 2.75], rotation: [0, -Math.PI / 3.5, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbwq29e%2FbtsDKJmOvPq%2Fzs1ASJ4DmpNab30MvCplPk%2Fimg.png`, text: "ULRIM is a startup that connects arts and culture workers in the dark with users through a platform to inform them of their own values and make them real. By providing solutions to the closed art and culture market, it was intended to provide opportunities for freelance artists by collaborating with them. "
     , title: "ULRIM Project" }
   ]
@@ -58,13 +59,19 @@ export default function Kong() {
             <Page1 fill={fill} />
           </div>
           <div className="fullcomponent">
+            <div className="experiences-text">
+              Skills
+            </div>
+            <Skills></Skills>
+          </div>
+          <div className="fullcomponent">
             <div className="project-text">
               Projects
             </div>
             <Page2 images={images} style={{ flex: 1 }} />
           </div>
           <div className="fullcomponent">
-            <div className="project-text">
+            <div className="experiences-text">
               Experiences
             </div>
             <Page3 images={images2} style={{ flex: 1 }} />

@@ -52,20 +52,20 @@ main {
   left: 50%; /* 가로 중앙 정렬 */
   transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
   font-family: 'Inter', sans-serif;
-  font-size: 44px;
+  font-size: 80px;
   font-weight: bold;
   color: #E8B059;
   white-space: pre;
 }
 .experiences-text {
   position: absolute;
-  top: 300px; /* 상단으로부터의 거리 */
+  top: 30px; /* 상단으로부터의 거리 */
   left: 50%; /* 가로 중앙 정렬 */
   transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
   font-family: 'Inter', sans-serif;
-  font-size: 44px;
+  font-size: 80px;
   font-weight: bold;
-  color: #E8B059;
+  color: #00264B;
   white-space: pre;
 }
 

@@ -14,6 +14,24 @@ export const Page2 = ({ images }: any) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} gl={{ alpha: true }}>
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[50, 50]} />
+        <MeshReflectorMaterial
+          blur={[300, 100]}
+          resolution={2048}
+          mixBlur={1}
+          mixStrength={80}
+          roughness={1}
+          depthScale={1.2}
+          minDepthThreshold={0.4}
+          maxDepthThreshold={1.4}
+          color="#050505"
+          transparent
+          opacity={0}
+          metalness={0.5}
+          mirror={0.5}
+        />
+      </mesh>
     </group>
     {/* <OrbitControls
       enablePan={false}
@@ -104,7 +122,7 @@ function Frame({ url, text, title, c = new THREE.Color(), ...props }: any) {
         scale={[1, GOLDENRATIO, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
-        <meshStandardMaterial color="white" metalness={1} roughness={0.2} envMapIntensity={2} />
+        {/* <meshStandardMaterial color="white" metalness={1} roughness={0.2} envMapIntensity={2} /> */}
         <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
           <boxGeometry />
           <meshBasicMaterial toneMapped={false} fog={false} />

@@ -46,6 +46,29 @@ main {
 }
 
 /*---------------------------------------------------------------------*/
+.project-text {
+  position: absolute;
+  top: 30px; /* 상단으로부터의 거리 */
+  left: 50%; /* 가로 중앙 정렬 */
+  transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
+  font-family: 'Inter', sans-serif;
+  font-size: 44px;
+  font-weight: bold;
+  color: #E8B059;
+  white-space: pre;
+}
+.experiences-text {
+  position: absolute;
+  top: 300px; /* 상단으로부터의 거리 */
+  left: 50%; /* 가로 중앙 정렬 */
+  transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
+  font-family: 'Inter', sans-serif;
+  font-size: 44px;
+  font-weight: bold;
+  color: #E8B059;
+  white-space: pre;
+}
+
 .scroll-container {
   overflow-y: auto;
   height: 100vh; /* 또는 원하는 높이 */
@@ -69,6 +92,7 @@ main {
   margin-bottom: 10vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  transition: transform 0.5s ease; /* 부드러운 전환 효과 */
 }
 
 .canvas {
@@ -106,6 +130,29 @@ svg {
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+  .project-text {
+    position: absolute;
+    top: 30px; /* 상단으로부터의 거리 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #E8B059;
+    white-space: pre;
+  }
+  .experiences-text {
+    position: absolute;
+    top: 300px; /* 상단으로부터의 거리 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #E8B059;
+    white-space: pre;
+  }
+
   .canvas {
     order: 1;
   }

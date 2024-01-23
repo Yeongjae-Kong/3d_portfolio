@@ -3,9 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
 import { OrbitControls, Text } from "@react-three/drei";
 import { Summer } from "quick-3d-views/src/lib";
-import Overlay1 from "./Overlay1";
-import {Overlay2} from "./Overlay2";
-import Overlay3 from "./Overlay3";
+import Page1 from "./page1";
+import {Page2} from "./page2";
+import {Page3} from "./page3";
 import './styles.css';
 import { useState } from "react";
 
@@ -19,15 +19,51 @@ export default function Kong() {
 
   const images = [
     // Front
-    { position: [0, 0, 1.5], rotation: [0, 0, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbETRH6%2FbtsDKzkhITT%2FyIkkPWrg3bCHJVR8sLODL1%2Fimg.png`, text:"Sinabro is a social media app that records and shares precious moments in your daily life. The app allows users to record their daily lives in a diary format and share precious memories with friends." },
+    { position: [0, 0, 1.4], rotation: [0, 0, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbETRH6%2FbtsDKzkhITT%2FyIkkPWrg3bCHJVR8sLODL1%2Fimg.png`, text:"Sinabro is a social media app that records and shares precious moments in your daily life. The app allows users to record their daily lives in a diary format and share precious memories with friends."
+    , title: "Sinabro Project"},
     // Left
-    { position: [-1.6, 0, 1.9], rotation: [0, Math.PI / 7, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdigBws%2FbtsDNqG5Pz0%2Fx3nsFQPF19iaTvW1nUUUP0%2Fimg.png`, text: "It is a hyperlocal community app project designed to solve the problem of joint purchase, cost reduction through joint delivery, and floor noise among apartment residents." },
-    { position: [-2.8, 0, 2.75], rotation: [0, Math.PI / 3.5, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgniK%2FbtsDUdlZTpd%2FMqCYpnqkwPAvzd9DGCuKX0%2Fimg.png`, text: "The Anomaly Detection with Human Data (called ADHD) is an AI project that learns AI models with Movenet & LSTM to detect abnormal situations such as assault by extracting Humanpose from CCTV (such as webcam) in real time to solve the recent surge in unmanned store crimes." },
+    { position: [-1.5, 0, 1.9], rotation: [0, Math.PI / 7, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdigBws%2FbtsDNqG5Pz0%2Fx3nsFQPF19iaTvW1nUUUP0%2Fimg.png`, text: "It is a hyperlocal community app project designed to solve the problem of joint purchase, cost reduction through joint delivery, and floor noise among apartment residents."
+    , title: "everyHome Project"},
+    { position: [-2.8, 0, 2.75], rotation: [0, Math.PI / 3.5, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgniK%2FbtsDUdlZTpd%2FMqCYpnqkwPAvzd9DGCuKX0%2Fimg.png`, text: "The Anomaly Detection with Human Data (called ADHD) is an AI project that learns AI models with Movenet & LSTM to detect abnormal situations such as assault by extracting Humanpose from CCTV (such as webcam) in real time to solve the recent surge in unmanned store crimes."
+    , title: "ADHD Project" },
     // Right
-    { position: [1.6, 0, 1.9], rotation: [0, -Math.PI / 7, 0], url: pexel(310452) },
-    { position: [2.8, 0, 2.75], rotation: [0, -Math.PI / 3.5, 0], url: pexel(1738986) }
+    { position: [1.5, 0, 1.9], rotation: [0, -Math.PI / 7, 0], url: pexel(310452) },
+    { position: [2.8, 0, 2.75], rotation: [0, -Math.PI / 3.5, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbwq29e%2FbtsDKJmOvPq%2Fzs1ASJ4DmpNab30MvCplPk%2Fimg.png`, text: "ULRIM is a startup that connects arts and culture workers in the dark with users through a platform to inform them of their own values and make them real. By providing solutions to the closed art and culture market, it was intended to provide opportunities for freelance artists by collaborating with them. "
+    , title: "ULRIM Project" }
   ]
+
+  const images2 = [
+    // Left
+    { position: [-1, 0, 1.8], rotation: [0, Math.PI / 15, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQEGIq%2FbtsDVnhtKRI%2F8pMiv2FvdgGUYINZ8k4qiK%2Fimg.png`, text: "3D Reconstruction through Neural Radiance Field & Generate Model"
+    , title: "2021.06 ~ 07  DGIST Intelligent Digital Systems LAB Intern"},
+    { position: [-2.5, 0, 2.75], rotation: [0, Math.PI / 3, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FXnZQu%2FbtsDLsFfKDr%2FLBAuFB0avrWckP3hqlWSkK%2Fimg.png`, text: "Object Detection by using TPU board"
+    , title: "2020.06 ~ 07  DGIST Image Processing LAB Intern"},
+    { position: [1, 0, 1.9], rotation: [0, -Math.PI / 15, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb1rh1G%2FbtsDLtjWfnO%2FTew4FHVOWq1KWcoMNiEueK%2Fimg.png`, text: "Production of DGIST campus 3D Model: Utilizing Data Lightening in SOTA 3D Reconstructionc"
+    , title: "2021.03 ~ 12  Undergraduate Group Research Program - 3D Reconstruction"},
+    { position: [2.5, 0, 2.75], rotation: [0, -Math.PI / 3, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNnQ33%2FbtsDQ2TapFI%2FCumqiL9oZqr2WKOkWCduf0%2Fimg.png`, text: "Programming Camp - App, Web, AI, and 3D interaction web" 
+    , title: "23.12 ~ 24.01  KAIST MadCamp"}
+  ]
+
+  const handleScroll = () => {
+    document.querySelectorAll('.fullcomponent').forEach((element) => {
+      // HTMLElement로 타입 단언
+      const el = element as HTMLElement;
+      const rect = el.getBoundingClientRect();
+      const height = window.innerHeight;
   
+      // 중앙에서의 거리 계산
+      const distanceToCenter = Math.abs(height / 2 - (rect.top + rect.bottom) / 2);
+      
+      // 스케일 계산
+      const scale = Math.max(1 - distanceToCenter / height, 0.5);
+  
+      // 스케일 적용
+      el.style.transform = `scale(${scale})`;
+    });
+  };
+  
+  // 스크롤 이벤트에 핸들러 연결
+  window.addEventListener('scroll', handleScroll);
 
   return (
     <div className="app-container">
@@ -40,18 +76,27 @@ export default function Kong() {
               <Scene setBg={set} onShapeClick={() => setIsDayTime(!isDayTime)} />
               <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
             </Canvas>
-            <Overlay1 fill={fill} />
+            <Page1 fill={fill} />
           </div>
           <div className="fullcomponent">
-            <Overlay2 images={images} />
+            <div className="project-text">
+              Projects
+            </div>
+            <Page2 images={images} style={{ flex: 1 }} />
           </div>
           <div className="fullcomponent">
+            <div className="project-text">
+              Experiences
+            </div>
+            <Page3 images={images2} style={{ flex: 1 }} />
+          </div>
+          {/* <div className="fullcomponent">
             <Canvas className="canvas" dpr={[1, 2]}>
               <Scene setBg={set} onShapeClick={() => setIsDayTime(!isDayTime)} />
               <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
             </Canvas>
             <Overlay3 fill={fill} />
-          </div>
+          </div> */}
       </div>
     </div>
   );

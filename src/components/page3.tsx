@@ -1,4 +1,3 @@
-import React from 'react'
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -78,7 +77,7 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }:
 }
 
 function Frame({ url, text, title, c = new THREE.Color(), ...props }: any) {
-  const textRef = useRef();
+  const textRef = useRef<any>(null);
   const [textOpacity, setTextOpacity] = useState(0);
   const image = useRef<any>(null)
   const frame = useRef<any>(null)

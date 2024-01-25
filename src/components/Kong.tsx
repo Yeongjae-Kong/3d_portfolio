@@ -1,15 +1,14 @@
 import { useSpring } from "@react-spring/web";
 import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
-import { OrbitControls, Text } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Spring, Summer, Autumn, Winter } from "quick-3d-views/src/lib";
 import Page1 from "./page1";
 import {Page2} from "./page2";
 import {Page3} from "./page3";
 import './styles.css';
-import React, { useState } from "react";
+import  { useState } from "react";
 import Skills from "./skills";
-import { Suspense } from "react";
 
 
 export default function Kong() {

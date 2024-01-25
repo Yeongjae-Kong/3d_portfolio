@@ -42,11 +42,11 @@ export default function Kong() {
       case 'spring':
         return <Spring />;
       case 'summer':
-        return <Summer />;
+        return <Summer isDayTime={isDayTime}/>;
       case 'autumn':
         return <Autumn />;
       case 'winter':
-        return <Winter />;
+        return <Winter isDayTime={isDayTime}/>;
     }
   };
 
@@ -65,10 +65,10 @@ export default function Kong() {
   return (
     <div className="app-container">
       <div className="season-selector" style={{ position: 'absolute', top: 0, right: 0 }}>
-        <img src="/spring.png" alt="Spring" onClick={() => setSeason('spring')} style={{ width: '50px', height: '50px' }} />
-        <img src="/summer.png" alt="Summer" onClick={() => setSeason('summer')} style={{ width: '50px', height: '50px' }} />
-        <img src="/autumn.png" alt="Autumn" onClick={() => setSeason('autumn')} style={{ width: '50px', height: '50px' }} />
-        <img src="/winter.png" alt="Winter" onClick={() => setSeason('winter')} style={{ width: '50px', height: '50px' }} />
+        <img src="/spring.png" alt="Spring" onClick={() => setSeason('spring')} />
+        <img src="/summer.png" alt="Summer" onClick={() => setSeason('summer')} />
+        <img src="/autumn.png" alt="Autumn" onClick={() => setSeason('autumn')} />
+        <img src="/winter.png" alt="Winter" onClick={() => setSeason('winter')} />
       </div>
       <div className="background-animation">
         {renderSeasonComponent(season)}

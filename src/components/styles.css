@@ -50,21 +50,22 @@ main {
 /* 계절 선택 UI 스타일 */
 .season-selector {
   position: absolute;
-  top: 30px; /* 상단으로부터의 간격 */
+  margin-top: 30px; /* 상단으로부터의 간격 */
+  margin-right: 60px;
   right: 30px; /* 우측으로부터의 간격 */
   z-index: 100; /* 다른 요소들 위에 표시 */
   display: flex;
   flex-wrap: wrap; /* 요소가 넘칠 경우 다음 줄로 이동 */
   align-items: center; /* 가로 중앙 정렬 */
   justify-content: center; /* 세로 중앙 정렬 */
-  width: 200px; /* 컨테이너 너비 */
+  width: 100px; /* 컨테이너 너비 */
   height: 200px; /* 컨테이너 높이 */
 }
 
 .season-selector img {
-  margin: 10px; /* 이미지 간 간격 */
-  width: 240px; /* 이미지 크기 */
-  height: 240px;
+  margin: 20px; /* 이미지 간 간격 */
+  width: 120px; /* 이미지 크기 */
+  height: 120px;
   cursor: pointer; /* 클릭 가능한 것을 나타내기 위해 */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 변환 효과 */
 }
@@ -145,6 +146,26 @@ svg {
 @media only screen and (max-aspect-ratio: 8/7) {
   main {
     flex-direction: column;
+  }
+  .season-selector {
+    position: absolute;
+    margin-top: 10px; /* 상단으로부터의 간격 */
+    margin-right: 0px;
+    right: 30px; /* 우측으로부터의 간격 */
+    z-index: 100; /* 다른 요소들 위에 표시 */
+    display: flex;
+    flex-wrap: wrap; /* 요소가 넘칠 경우 다음 줄로 이동 */
+    align-items: center; /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    width: 100px; /* 컨테이너 너비 */
+    height: 200px; /* 컨테이너 높이 */
+  }
+  .season-selector img {
+    margin: 5px; /* 이미지 간 간격 */
+    width: 50px; /* 이미지 크기 */
+    height: 50px;
+    cursor: pointer; /* 클릭 가능한 것을 나타내기 위해 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 변환 효과 */
   }
   .fullcomponent {
     flex-direction: column;

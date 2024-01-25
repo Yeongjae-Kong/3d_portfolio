@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Frontend_skill, Backend_skill } from './index'; // index.ts에서 데이터 가져오기
 import './skills.css';

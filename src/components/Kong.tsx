@@ -2,13 +2,14 @@ import { useSpring } from "@react-spring/web";
 import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
 import { OrbitControls, Text } from "@react-three/drei";
-import { Summer } from "quick-3d-views/src/lib";
+import { Spring, Summer, Autumn, Winter } from "quick-3d-views/src/lib";
 import Page1 from "./page1";
 import {Page2} from "./page2";
 import {Page3} from "./page3";
 import './styles.css';
-import { useState } from "react";
+import React, { useState } from "react";
 import Skills from "./skills";
+import { Suspense } from "react";
 
 
 export default function Kong() {
@@ -33,6 +34,23 @@ export default function Kong() {
     , title: "ULRIM Project" }
   ]
 
+  // background seasons 설정
+  const [season, setSeason] = useState('spring'); // 기본값은 'autumn'
+
+  // 계절에 따른 컴포넌트 렌더링 함수
+  const renderSeasonComponent = (season: any) => {
+    switch (season) {
+      case 'spring':
+        return <Suspense fallback={null}><Spring /></Suspense>;
+      case 'summer':
+        return <Summer />;
+      case 'autumn':
+        return <Suspense fallback={null}><Autumn /></Suspense>;
+      case 'winter':
+        return <Winter />;
+    }
+  };
+
   const images2 = [
     // Left
     { position: [-1, 0, 1.8], rotation: [0, Math.PI / 15, 0], url: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQEGIq%2FbtsDVnhtKRI%2F8pMiv2FvdgGUYINZ8k4qiK%2Fimg.png`, text: "3D Reconstruction through Neural Radiance Field & Generate Model"
@@ -47,8 +65,14 @@ export default function Kong() {
 
   return (
     <div className="app-container">
-      <div className="ocean-animation">
-        <Summer isDayTime={isDayTime} />
+      <div className="season-selector" style={{ position: 'absolute', top: 0, right: 0 }}>
+        <img src="/spring.png" alt="Spring" onClick={() => setSeason('spring')} style={{ width: '50px', height: '50px' }} />
+        <img src="/summer.png" alt="Summer" onClick={() => setSeason('summer')} style={{ width: '50px', height: '50px' }} />
+        <img src="/autumn.png" alt="Autumn" onClick={() => setSeason('autumn')} style={{ width: '50px', height: '50px' }} />
+        <img src="/winter.png" alt="Winter" onClick={() => setSeason('winter')} style={{ width: '50px', height: '50px' }} />
+      </div>
+      <div className="background-animation">
+        {renderSeasonComponent(season)}
       </div>
       <div className="scroll-container">
           <div className="fullcomponent">

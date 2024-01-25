@@ -115,9 +115,9 @@ main {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative; /* 추가된 스타일 */
-  height: 80%;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  height: 70%;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   margin-left: 10vw;
   margin-right: 10vw;
   transition: transform 0.5s ease; /* 부드러운 전환 효과 */

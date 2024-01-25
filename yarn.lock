@@ -1858,10 +1858,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-quick-3d-views@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/quick-3d-views/-/quick-3d-views-1.1.6.tgz#6417a62da694fa3c522bacc6b878ff9fe61bea28"
-  integrity sha512-2sLxH9xzbab89mGPSTaQ0+nxWlMDv0PmsEFvSwlfLqgj4+kYNEnflE1jiR4FIArPS/BmWcUtgUnnlhPjW0m3RQ==
+quick-3d-views@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/quick-3d-views/-/quick-3d-views-1.1.7.tgz#e3f5dd5cc17968fca3b62fdc48d3b3bfa20e89cc"
+  integrity sha512-n+5XKYaaMzog6xVWr2TmwtHlJSdJhIcNy3lm4xQSCoJtKQLY7qienIo/iIPkBo4WjKFO3qCGc2JPnRi2ILs/+Q==
   dependencies:
     "@react-spring/three" "^9.7.3"
     "@react-three/cannon" "^6.6.0"

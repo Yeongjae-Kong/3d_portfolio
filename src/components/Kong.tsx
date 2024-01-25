@@ -41,11 +41,11 @@ export default function Kong() {
   const renderSeasonComponent = (season: any) => {
     switch (season) {
       case 'spring':
-        return <Suspense fallback={null}><Spring /></Suspense>;
+        return <Spring />;
       case 'summer':
         return <Summer />;
       case 'autumn':
-        return <Suspense fallback={null}><Autumn /></Suspense>;
+        return <Autumn />;
       case 'winter':
         return <Winter />;
     }

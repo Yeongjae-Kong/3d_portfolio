@@ -1,33 +1,38 @@
 .skills-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Horizontally centers content in a column flex container */
+  justify-content: center; /* Vertically centers content in a column flex container */
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centers the container in the parent */
   padding: 20px;
+  height: 90vh; /* Use the full height of the viewport */
 }
 
 .skills-row {
   display: flex;
-  justify-content: center;
-  gap: 2vw; /* 화면 너비에 따라 간격 조정 */
-  margin-bottom: 2vw; /* 화면 너비에 따라 줄 간 간격 조정 */
+  justify-content: center; /* Horizontally centers items in the row */
+  align-items: center; /* Vertically centers items in the row, useful if they have different heights */
+  gap: 2vw;
+  margin-bottom: 2vw;
+  width: 100%; /* Ensure row takes full width of the container */
 }
 
 .skill-item {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center content horizontally in the item */
+  justify-content: center; /* Center content vertically in the item */
   gap: 1vw;
+  height: 100%; /* Make sure the item uses the full height of its container (skills-row) */
 }
 
 .skill-item img {
-  width: 5vw; /* 화면 너비에 따라 이미지 크기 조정 */
-  height: auto; /* 이미지 비율 유지 */
+  width: 5vw;
+  height: auto;
 }
 
 .skill-item img:hover {
-  transform: scale(1.1); /* 마우스 오버 시 약간 확대 */
+  transform: scale(1.1);
 }
